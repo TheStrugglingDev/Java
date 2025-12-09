@@ -35,10 +35,11 @@ public class Main {
         System.out.println("What year were you born? ");
 
         boolean validDOB = false;
+        int age = 0;
         do {
             System.out.println("Enter a year of birth >= " +
                     (currentYear - 125) + " and <= " + (currentYear));
-            int age = checkData(currentYear, scanner.nextLine());
+            age = checkData(currentYear, scanner.nextLine());
             validDOB = age >= 0;
         } while (!validDOB);
         return "So you are " + age + " years old";
