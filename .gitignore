@@ -2,33 +2,38 @@
 **/.idea/
 **/*.iml
 
-### Build outputs (recursive) ###
+### Build outputs (recursive for each exercise) ###
 **/out/
 **/build/
+
+### Gradle cache (if ever used accidentally) ###
 **/.gradle/
 
-### Kotlin (if ever used) ###
-.kotlin
+### Kotlin (future-proof) ###
+.kotlin/
 
 ### Eclipse ###
-.apt_generated
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
+.apt_generated/
+.factorypath
+.springBeans/
+.sts4-cache/
 **/bin/
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 ### VS Code ###
 .vscode/
 
-### OS ###
+### macOS ###
 .DS_Store
+
+### Windows ###
+Thumbs.db
