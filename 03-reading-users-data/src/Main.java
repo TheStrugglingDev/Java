@@ -31,12 +31,28 @@ public class Main {
         System.out.println("Hi, what's your name? ");
         String name = scanner.nextLine();
         System.out.println("Hi " + name + ", Thanks for taking the course!");
-
 //        String dateOfBirth = System.console().readLine("What year were you born? ");
         System.out.println("What year were you born? ");
-        String dateOfBirth = scanner.nextLine();
-        int age = currentYear - Integer.parseInt(dateOfBirth);
 
+        boolean validDOB = false;
+        int age = 0;
+        do {
+            System.out.println("Enter a year of birth >= " +
+                    (currentYear - 125) + " and <= " + (currentYear));
+            age = checkData(currentYear, scanner.nextLine());
+            validDOB = age >= 0;
+        } while (!validDOB);
         return "So you are " + age + " years old";
+    }
+
+    public static int checkData(int currentYear, String dateOfBirth) {
+
+        int dob = Integer.parseInt(dateOfBirth);
+        int minimumYear = currentYear - 125;
+
+        if ((dob < minimumYear) || (dob > currentYear)) {
+            return -1;
+        }
+        return (currentYear - dob);
     }
 }
