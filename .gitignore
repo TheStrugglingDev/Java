@@ -1,5 +1,5 @@
 ### IntelliJ ###
-# Exclude only volatile or machine-specific files
+# Exclude volatile or machine-specific files
 .idea/shelf/
 .idea/workspace.xml
 .idea/tasks.xml
@@ -8,11 +8,13 @@
 .idea/libraries/
 .idea/caches/
 
-# Allow project configuration (modules, misc.xml) to be committed
-!/.idea/*.xml
+# Allow IntelliJ project configuration files to be committed
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/vcs.xml
 !*.iml
 
-### Build outputs (recursively for each exercise) ###
+### Build outputs ###
 out/
 **/out/
 build/
