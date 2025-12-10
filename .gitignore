@@ -1,15 +1,27 @@
-### IntelliJ / JetBrains ###
-**/.idea/
-**/*.iml
+### IntelliJ ###
+# Exclude only volatile or machine-specific files
+.idea/shelf/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/libraries/
+.idea/caches/
 
-### Build outputs (recursive for each exercise) ###
+# Allow project configuration (modules, misc.xml) to be committed
+!/.idea/*.xml
+!*.iml
+
+### Build outputs (recursively for each exercise) ###
+out/
 **/out/
+build/
 **/build/
 
-### Gradle cache (if ever used accidentally) ###
-**/.gradle/
+### Gradle (if used in the future) ###
+.gradle/
 
-### Kotlin (future-proof) ###
+### Kotlin cache ###
 .kotlin/
 
 ### Eclipse ###
