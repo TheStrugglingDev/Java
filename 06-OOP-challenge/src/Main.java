@@ -7,16 +7,20 @@ public class Main {
         System.out.println(georgesAccount.getNumber());
         System.out.println(georgesAccount.getBalance());
 
-//        georgesAccount.setNumber("29391");
-//        georgesAccount.setBalance(3000);
-//        georgesAccount.setCustomerName("George Owen");
-//        georgesAccount.setCustomerEmail("george@owen.com");
-//        georgesAccount.setCustomerPhone("(082)145-5912");
+// georgesAccount.setNumber("29391");
+// georgesAccount.setBalance(3000);
+// georgesAccount.setCustomerName("George Owen");
+// georgesAccount.setCustomerEmail("george@owen.com");
+// georgesAccount.setCustomerPhone("(082)145-5912");
 
         georgesAccount.withdrawFunds(100);
         georgesAccount.depositFunds(500);
         georgesAccount.withdrawFunds(200);
         georgesAccount.withdrawFunds(300);
 
+        Account johnsAccount = new Account("John", "john@email.com",
+                "2345");
+        System.out.println("AccountNo: " + johnsAccount.getNumber() +
+                "; name " + johnsAccount.getCustomerName());
     }
 }
