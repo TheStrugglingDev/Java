@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        `Movie theMovie = Movie.getMovie("Adventure", "Star Wards");
+//        Movie theMovie = Movie.getMovie("Adventure", "Star Wards");
 //        theMovie.watchMovie();
 
         Scanner s = new Scanner(System.in);
