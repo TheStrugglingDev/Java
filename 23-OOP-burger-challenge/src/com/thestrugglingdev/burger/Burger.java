@@ -1,3 +1,5 @@
+package com.thestrugglingdev.burger;
+
 public class Burger extends Item {
 
     private Item extra1;
@@ -6,7 +8,7 @@ public class Burger extends Item {
 
     public Burger(String name, double price) {
 
-        super("Burger", name, price);
+        super("com.thestrugglingdev.burger.Burger", name, price);
     }
 
     @Override
@@ -43,7 +45,7 @@ public class Burger extends Item {
 
     public void printItemizedList() {
 
-        printItem("BASE BURGER", getBasePrice());
+        Item.printItem("BASE BURGER", getBasePrice());
         if (extra1 != null) {
             extra1.printItem();
         }

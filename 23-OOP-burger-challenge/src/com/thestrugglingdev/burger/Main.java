@@ -1,25 +1,27 @@
+package com.thestrugglingdev.burger;
+
 public class Main {
 
     public static void main(String[] args) {
 
-//        Item coke = new Item("drink", "coke", 1.5);
+//        com.thestrugglingdev.burger.Item coke = new com.thestrugglingdev.burger.Item("drink", "coke", 1.5);
 //        coke.printItem();
 //        coke.setSize("LARGE");
 //        coke.printItem();
 //
-//        Item avocado = new Item("Topping", "avocado", 1.5);
+//        com.thestrugglingdev.burger.Item avocado = new com.thestrugglingdev.burger.Item("Topping", "avocado", 1.5);
 //        avocado.printItem();
 
-//        Burger burger = new Burger("regular", 4.00);
+//        com.thestrugglingdev.burger.Burger burger = new com.thestrugglingdev.burger.Burger("regular", 4.00);
 //        burger.addToppings("BACON", "CHEESE", "MAYO");
 //        burger.printItem();
 
-//        MealOrder regularMeal = new MealOrder();
+//        com.thestrugglingdev.burger.MealOrder regularMeal = new com.thestrugglingdev.burger.MealOrder();
 //        regularMeal.addBurgerToppings("BACON", "CHEESE", "MAYO");
 //        regularMeal.setDrinkSize("LARGE");
 //        regularMeal.printItemizedList();
 //
-//        MealOrder secondMeal = new MealOrder("turkey", "7-up",
+//        com.thestrugglingdev.burger.MealOrder secondMeal = new com.thestrugglingdev.burger.MealOrder("turkey", "7-up",
 //                "chili");
 //        secondMeal.addBurgerToppings("LETTUCE", "CHEESE", "MAYO");
 //        secondMeal.setDrinkSize("SMALL");

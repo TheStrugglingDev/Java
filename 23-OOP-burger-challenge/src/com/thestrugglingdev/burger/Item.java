@@ -1,3 +1,5 @@
+package com.thestrugglingdev.burger;
+
 public class Item {
 
     private String type;

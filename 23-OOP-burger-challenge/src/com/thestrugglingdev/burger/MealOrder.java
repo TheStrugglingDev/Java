@@ -1,3 +1,5 @@
+package com.thestrugglingdev.burger;
+
 public class MealOrder {
 
     private Burger burger;
@@ -56,7 +58,7 @@ public class MealOrder {
             burger.addToppings(extra1, extra2, extra3);
         }
     }
-    
+
     public void setDrinkSize(String size) {
         drink.setSize(size);
     }

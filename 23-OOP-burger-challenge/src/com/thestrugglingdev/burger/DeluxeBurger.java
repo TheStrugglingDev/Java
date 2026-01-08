@@ -1,3 +1,5 @@
+package com.thestrugglingdev.burger;
+
 public class DeluxeBurger extends Burger {
 
     Item deluxe1;
@@ -6,7 +8,7 @@ public class DeluxeBurger extends Burger {
     public DeluxeBurger(String name, double price) {
         super(name, price);
     }
-    
+
     public void addToppings(String extra1, String extra2, String extra3,
                             String extra4, String extra5) {
         super.addToppings(extra1, extra2, extra3);
