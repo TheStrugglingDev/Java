@@ -1,4 +1,4 @@
-package strugglingdev;
+package com.strugglingdev;
 
 import java.util.ArrayList;
 
