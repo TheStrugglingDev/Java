@@ -18,6 +18,7 @@ public class Bird extends Animal implements FlightEnabled, Trackable {
     @Override
     public void land() {
 
+        
         System.out.println(getClass().getSimpleName() + " is landing");
     }
 
