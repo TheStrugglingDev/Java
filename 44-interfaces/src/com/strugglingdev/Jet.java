@@ -2,6 +2,7 @@ package com.strugglingdev;
 
 public class Jet implements FlightEnabled, Trackable {
 
+
     @Override
     public void takeOff() {
 
