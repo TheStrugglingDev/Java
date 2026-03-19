@@ -19,6 +19,9 @@ public class Main {
 //        flier.land();
 //
         inFlight(flier);
+        inFlight(new Jet());
+        Trackable truck = new Truck();
+        truck.track();
     }
 
     private static void inFlight(FlightEnabled flier) {
