@@ -27,6 +27,7 @@ public interface Mappable {
     }
 
     static void mapIt(Mappable mappable) {
+
         System.out.println(JSON_PROPERTY.formatted(mappable.toJSON()));
     }
 }
