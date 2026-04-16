@@ -3,7 +3,7 @@ package com.strugglingdev;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team<T> {
+public class Team<T extends Player> {
 
     private String teamName;
     private List<T> teamMembers = new ArrayList<>();
@@ -25,7 +25,9 @@ public class Team<T> {
     public void listTeamMembers() {
 
         System.out.println(teamName + " Roster:");
-        System.out.println(teamMembers);
+        for (T t : teamMembers) {
+            System.out.println(t.name());
+        }
     }
 
     public int ranking() {
