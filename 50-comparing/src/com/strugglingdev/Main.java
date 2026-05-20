@@ -52,7 +52,14 @@ class StudentGPAComparator implements Comparator<Student> {
 
     @Override
     public int compare(Student o1, Student o2) {
-        return (o1.gpa + o1.name).compareTo(o2.gpa + o2.name);
+
+        int result = Double.compare(o1.gpa, o2.gpa);
+
+        if (result == 0) {
+            return o1.name.compareTo(o2.name);
+        }
+
+        return result;
     }
 }
 
@@ -79,7 +86,7 @@ class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student o) {
-        return Integer.valueOf(id).compareTo(Integer.valueOf(o.id));
+        return Integer.compare(id, o.id);
     }
 
 //    @Override
