@@ -12,10 +12,17 @@ public class Main {
         for (int i = 0; i < studentCount; i++) {
             students.add(new Student());
         }
+        students.add(new SDStudent());
         printList(students);
+
+        List<SDStudent> sdStudents = new ArrayList<>();
+        for (int i = 0; i < studentCount; i++) {
+            sdStudents.add(new SDStudent());
+        }
+        printList(sdStudents);
     }
 
-    public static void printList(List<Student> students) {
+    public static void printList(List students) {
 
         for (var student : students) {
             System.out.println(student);
