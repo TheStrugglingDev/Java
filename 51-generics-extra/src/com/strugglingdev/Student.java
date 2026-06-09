@@ -36,6 +36,8 @@ public class Student implements QueryItem {
         String fName = fieldName.toUpperCase();
         return switch (fName) {
             case "NAME" -> this.name.equalsIgnoreCase(value);
+            case "COURSE" -> this.course.equalsIgnoreCase(value);
+            case "YEARSTARTED" -> this.yearStarted == Integer.parseInt(value);
             default -> false;
         };
     }
