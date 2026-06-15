@@ -1,9 +1,12 @@
 package com.strugglingdev.burger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Meal {
 
     private double price = 5.0;
-    private Item burger;
+    private Burger burger;
     private Item drink;
     private Item side;
 
@@ -15,7 +18,7 @@ public class Meal {
 
     public Meal(double conversionRate) {
         this.conversionRate = conversionRate;
-        burger = new Item("regular", "burger");
+        burger = new Burger("regular");
         drink = new Item("coke", "drink", 1.5);
         System.out.println(drink.name);
         side = new Item("fries", "side", 2.0);
@@ -23,7 +26,7 @@ public class Meal {
 
     public double getTotal() {
 
-        double total = burger.price + drink.price + side.price;
+        double total = burger.getPrice() + drink.price + side.price;
         return Item.getPrice(total, conversionRate);
     }
 
@@ -55,6 +58,29 @@ public class Meal {
 
         private static double getPrice(double price, double rate) {
             return price * rate;
+        }
+    }
+
+    public class Burger extends Item {
+
+        private enum Extra {AVOCADO, BACON, CHEESE, KETCHUP, MAYO, MUSTARD, PICKLES}
+
+        private List<Item> toppings = new ArrayList<>();
+
+        Burger(String name) {
+            super(name, "burger", 5.0);
+        }
+
+        public double getPrice() {
+            return super.price;
+        }
+
+        private void addToppings(String... selectedToppings) {
+
+            for (String selectedTopping : selectedToppings) {
+                Extra topping = Extra.valueOf(selectedTopping.toUpperCase());
+                toppings.add(new Item(topping.name(), "TOPPING", 0));
+            }
         }
     }
 }
