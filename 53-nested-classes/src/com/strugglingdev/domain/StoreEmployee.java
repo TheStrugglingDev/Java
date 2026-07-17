@@ -1,8 +1,8 @@
-package com.strugglingdev;
+package com.strugglingdev.domain;
 
 import java.util.Comparator;
 
-public class StoreEmployee extends com.strugglingdev.Employee {
+public class StoreEmployee extends Employee {
 
     private String store;
 
@@ -26,7 +26,7 @@ public class StoreEmployee extends com.strugglingdev.Employee {
         public int compare(StoreEmployee o1, StoreEmployee o2) {
             int result = o1.store.compareTo(o2.store);
             if (result == 0) {
-                return new com.strugglingdev.Employee.EmployeeComparator<>(
+                return new Employee.EmployeeComparator<>(
                         "yearStarted").compare(o1, o2);
             }
             return result;

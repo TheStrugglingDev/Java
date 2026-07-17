@@ -1,4 +1,4 @@
-package com.strugglingdev;
+package com.strugglingdev.domain;
 
 import java.util.Comparator;
 
