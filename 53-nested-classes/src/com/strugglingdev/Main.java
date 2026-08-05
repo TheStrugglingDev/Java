@@ -42,15 +42,40 @@ public record Main() {
         for (StoreEmployee e : storeEmployees) {
             System.out.println(e);
         }
+
+        System.out.println("With Pig Latin Names");
+        addPigLatinName(storeEmployees);
     }
 
-    public static void addPigLatinName(List<? extends StoreEmployee> employees) {
+    public static void addPigLatinName(List<? extends StoreEmployee> list) {
 
         class DecoratedEmployee extends StoreEmployee {
 
             private String pigLatinName;
-            
+
             private Employee originalInstance;
+
+            public DecoratedEmployee(String pigLatinName, Employee originalInstance) {
+                this.pigLatinName = pigLatinName;
+                this.originalInstance = originalInstance;
+            }
+
+            @Override
+            public String toString() {
+                return originalInstance.toString() + " " + pigLatinName;
+            }
+        }
+
+        List<DecoratedEmployee> newList = new ArrayList<>(list.size());
+
+        for (var employee : list) {
+            String name = employee.getName();
+            String pigLatin = name.substring(1) + name.charAt(0) + "ay";
+            newList.add(new DecoratedEmployee(pigLatin, employee));
+        }
+
+        for (var dEmployee : newList) {
+            System.out.println(dEmployee);
         }
     }
 }
