@@ -49,20 +49,28 @@ public record Main() {
 
     public static void addPigLatinName(List<? extends StoreEmployee> list) {
 
-        class DecoratedEmployee extends StoreEmployee {
+        String lastName = "Piggy";
+
+        class DecoratedEmployee extends StoreEmployee
+                implements Comparable<DecoratedEmployee> {
 
             private String pigLatinName;
 
             private Employee originalInstance;
 
             public DecoratedEmployee(String pigLatinName, Employee originalInstance) {
-                this.pigLatinName = pigLatinName;
+                this.pigLatinName = pigLatinName + " " + lastName;
                 this.originalInstance = originalInstance;
             }
 
             @Override
             public String toString() {
                 return originalInstance.toString() + " " + pigLatinName;
+            }
+
+            @Override
+            public int compareTo(DecoratedEmployee o) {
+                return pigLatinName.compareTo(o.pigLatinName);
             }
         }
 
@@ -74,8 +82,12 @@ public record Main() {
             newList.add(new DecoratedEmployee(pigLatin, employee));
         }
 
+        newList.sort(null); //null as argument in sort method uses
+        // Comparable's compareTo method. Same as Comparator.naturalOrder method
+
         for (var dEmployee : newList) {
-            System.out.println(dEmployee);
+            System.out.println(dEmployee.originalInstance.getName() + " "
+                    + dEmployee.pigLatinName);
         }
     }
 }
