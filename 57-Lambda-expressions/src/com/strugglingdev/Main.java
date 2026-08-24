@@ -1,7 +1,9 @@
 package com.strugglingdev;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.BinaryOperator;
 
 public class Main {
 
@@ -29,11 +31,18 @@ public class Main {
         var result3 = calculator(
                 (a, b) -> a.toUpperCase() + " " + b.toUpperCase(),
                 "Ralph", "Kramden");
+
+        var coords = Arrays.asList(
+                new double[]{47.2160, -95.2348},
+                new double[]{29.1566, -89.2495},
+                new double[]{35.1556, -90.0659});
+
+        coords.forEach(s -> System.out.println(Arrays.toString(s)));
     }
 
-    public static <T> T calculator(Operation<T> function, T value1, T value2) {
+    public static <T> T calculator(BinaryOperator<T> function, T value1, T value2) {
 
-        T result = function.operate(value1, value2);
+        T result = function.apply(value1, value2);
         System.out.println("Result of operation is: " + result);
         return result;
     }
