@@ -2,6 +2,8 @@ package com.strugglingdev;
 
 import java.util.Arrays;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class Main {
 
@@ -40,6 +42,18 @@ public class Main {
         };
 
         printWordsConcise.accept("Let's split this up into an array");
+
+        UnaryOperator<String> everySecondChar = source -> {
+            StringBuilder returnVal = new StringBuilder();
+            for (int i = 0; i < source.length(); i++) {
+                if (i % 2 == 1) {
+                    returnVal.append(source.charAt(i));
+                }
+            }
+            return returnVal.toString();
+        };
+
+        System.out.println(everySecondChar.apply("1234567890"));
     }
 }
 
