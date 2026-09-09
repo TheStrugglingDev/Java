@@ -3,6 +3,7 @@ package com.strugglingdev;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class Main {
@@ -53,7 +54,21 @@ public class Main {
             return returnVal.toString();
         };
 
-        System.out.println(everySecondChar.apply("1234567890"));
+        String result = everySecondCharacter(everySecondChar, "1234567890");
+        System.out.println(result);
+
+        Supplier<String> iLoveJava = () -> "I Love Java";
+        Supplier<String> iLoveJava2 = () -> {
+            return "I Love Java";
+        };
+        
+        var supplierResult = iLoveJava.get();
+        System.out.println(supplierResult);
+    }
+
+    public static String everySecondCharacter(UnaryOperator<String> function, String source) {
+
+        return function.apply(source);
     }
 }
 
