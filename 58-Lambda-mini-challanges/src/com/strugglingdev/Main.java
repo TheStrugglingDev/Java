@@ -61,15 +61,17 @@ public class Main {
         Supplier<String> iLoveJava2 = () -> {
             return "I Love Java";
         };
-        
+
         var supplierResult = iLoveJava.get();
         System.out.println(supplierResult);
+        
     }
 
     public static String everySecondCharacter(UnaryOperator<String> function, String source) {
 
         return function.apply(source);
     }
+
 }
 
 
